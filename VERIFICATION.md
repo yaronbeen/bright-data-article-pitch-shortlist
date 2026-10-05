@@ -8,6 +8,7 @@ Date: 2026-10-05
 - Final frozen-candidate review results: QA SHIP/APPROVE, brand SHIP/APPROVE, security APPROVE.
 - Independent runtime verifier: PASS. No reproducible blocker was observed within the verification scope. Review is no longer pending.
 - Publication checks are recorded in `/home/yaron/projects/article-pitch-shortlist/RELEASE_STATUS.md`. No submission or paid live request was performed.
+- Public GitHub publication verified at https://github.com/yaronbeen/article-pitch-shortlist : clean-clone 159 tests, three offline goldens, zero socket attempts, compile/manifest/committed-inventory checks, and Python 3.11/3.12 CI passed for code commit `d681ed1db20801acc27ef1b80847138175693ef0`.
 - Governing contract: `/home/yaron/.claude/data/brightdata-drafts/2026-10-04-five-project-build-contract.md`, Section 3.2 (line 82).
 
 ## Frozen Fixes
