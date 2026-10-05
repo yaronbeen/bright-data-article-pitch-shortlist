@@ -1,0 +1,11 @@
+{
+  "general": {"query": "project import guest tutorial"},
+  "organic": [
+    {
+      "link": "https://publisher.invalid/articles/imports",
+      "title": "Synthetic search result",
+      "description": "An invented search result used only to exercise offline import.",
+      "rank": 1
+    }
+  ]
+}

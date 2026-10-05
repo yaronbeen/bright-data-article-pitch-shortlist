@@ -1,0 +1,511 @@
+{
+  "analysis_method": "deterministic_rules_v1",
+  "cards": [
+    {
+      "accepted_formats": [
+        "tutorial"
+      ],
+      "declared_checks": {
+        "has_worked_example": true,
+        "is_unpublished": true,
+        "method": "new_followup",
+        "planned_word_count": 700
+      },
+      "evidence": [
+        {
+          "block_id": "b0001",
+          "quote": "Importing project data",
+          "source_id": "north_example"
+        },
+        {
+          "block_id": "b0002",
+          "quote": "A guide to project import with a worked malformed-date example.",
+          "source_id": "north_example"
+        },
+        {
+          "block_id": "b0002",
+          "quote": "[editorial guideline wording omitted; structured rule state retained]",
+          "source_id": "north_rules"
+        },
+        {
+          "block_id": "b0002",
+          "quote": "[editorial guideline wording omitted; structured rule state retained]",
+          "source_id": "north_rules"
+        },
+        {
+          "block_id": "b0002",
+          "quote": "[editorial guideline wording omitted; structured rule state retained]",
+          "source_id": "north_rules"
+        },
+        {
+          "block_id": "b0002",
+          "quote": "[editorial guideline wording omitted; structured rule state retained]",
+          "source_id": "north_rules"
+        },
+        {
+          "block_id": "b0003",
+          "quote": "[editorial guideline wording omitted; structured rule state retained]",
+          "source_id": "north_rules"
+        }
+      ],
+      "example_url": "https://north.example.com/example",
+      "exclusion_reasons": [],
+      "fit_excerpt": "A guide to project import with a worked malformed-date example.",
+      "format_state": "explicitly_accepted",
+      "matched_topic_phrase": "project import",
+      "originality_declaration": {
+        "is_unpublished": true,
+        "method": "new_followup",
+        "verification": "operator_declared_unverified"
+      },
+      "originality_state": "original_unpublished_required",
+      "pitch_draft": "I read \"Importing project data\" (https://north.example.com/example), which discusses project import. I propose \"Diagnose a failed project import\", a tutorial for small-team operators. The contribution is A synthetic malformed-date example and a corrected-row retry checklist. This would be a new follow-up, not a republication of \"Choosing an import method\". I can provide a worked example. The proposed length is 700 words. I have framed the proposed piece as a tutorial. The proposed piece is planned as a new, unpublished follow-up.",
+      "proposed_format": "tutorial",
+      "publisher": "North",
+      "publisher_host": "north.example.com",
+      "publisher_id": "north",
+      "qualification": "ready_for_human_pitch_review",
+      "research_task": null,
+      "route_state": "observed_route",
+      "submission_url": "https://north.example.com/contribute",
+      "topic_state": "body_evidence_found",
+      "unknowns": [],
+      "word_max": 800,
+      "word_min": 500,
+      "worked_example_state": "required"
+    },
+    {
+      "accepted_formats": [],
+      "declared_checks": {
+        "has_worked_example": true,
+        "is_unpublished": true,
+        "method": "new_followup",
+        "planned_word_count": 700
+      },
+      "evidence": [
+        {
+          "block_id": "b0001",
+          "quote": "Moving a team's projects",
+          "source_id": "east_example"
+        },
+        {
+          "block_id": "b0002",
+          "quote": "The project import example separates valid rows from malformed dates.",
+          "source_id": "east_example"
+        }
+      ],
+      "example_url": "https://east.example.com/example",
+      "exclusion_reasons": [],
+      "fit_excerpt": "The project import example separates valid rows from malformed dates.",
+      "format_state": "not_stated",
+      "matched_topic_phrase": "project import",
+      "originality_declaration": {
+        "is_unpublished": true,
+        "method": "new_followup",
+        "verification": "operator_declared_unverified"
+      },
+      "originality_state": "not_stated",
+      "pitch_draft": null,
+      "proposed_format": "tutorial",
+      "publisher": "East",
+      "publisher_host": "east.example.com",
+      "publisher_id": "east",
+      "qualification": "needs_guideline_or_route_check",
+      "research_task": "Verify the publisher's current guidelines and an exact-host submission route before pitching.",
+      "route_state": "not_observed",
+      "submission_url": null,
+      "topic_state": "body_evidence_found",
+      "unknowns": [
+        "format_permission_not_stated",
+        "originality_rule_not_stated",
+        "worked_example_rule_not_stated",
+        "guidelines_not_supplied",
+        "submission_route_not_observed"
+      ],
+      "word_max": null,
+      "word_min": null,
+      "worked_example_state": "not_stated"
+    }
+  ],
+  "decision": "pitch_shortlist",
+  "draft_method": "approved_text_templates_v1",
+  "excluded": [
+    {
+      "accepted_formats": [],
+      "declared_checks": {
+        "has_worked_example": true,
+        "is_unpublished": true,
+        "method": "new_followup",
+        "planned_word_count": 700
+      },
+      "evidence": [
+        {
+          "block_id": "b0001",
+          "quote": "Reliable data moves",
+          "source_id": "west_example"
+        },
+        {
+          "block_id": "b0002",
+          "quote": "This project import walkthrough uses a small invented data set.",
+          "source_id": "west_example"
+        },
+        {
+          "block_id": "b0001",
+          "quote": "[editorial guideline wording omitted; structured rule state retained]",
+          "source_id": "west_rules"
+        }
+      ],
+      "example_url": "https://west.example.com/example",
+      "exclusion_reasons": [
+        "submissions_closed"
+      ],
+      "fit_excerpt": "This project import walkthrough uses a small invented data set.",
+      "format_state": "not_stated",
+      "matched_topic_phrase": "project import",
+      "originality_declaration": {
+        "is_unpublished": true,
+        "method": "new_followup",
+        "verification": "operator_declared_unverified"
+      },
+      "originality_state": "not_stated",
+      "pitch_draft": null,
+      "proposed_format": "tutorial",
+      "publisher": "West",
+      "publisher_host": "west.example.com",
+      "publisher_id": "west",
+      "qualification": "explicit_mismatch",
+      "research_task": "Verify the publisher's current guidelines and an exact-host submission route before pitching.",
+      "route_state": "not_observed",
+      "submission_url": null,
+      "topic_state": "body_evidence_found",
+      "unknowns": [
+        "format_permission_not_stated",
+        "originality_rule_not_stated",
+        "worked_example_rule_not_stated",
+        "submission_route_not_observed"
+      ],
+      "word_max": null,
+      "word_min": null,
+      "worked_example_state": "not_stated"
+    }
+  ],
+  "project": "article-pitch-shortlist",
+  "publishers": [
+    {
+      "accepted_formats": [
+        "tutorial"
+      ],
+      "declared_checks": {
+        "has_worked_example": true,
+        "is_unpublished": true,
+        "method": "new_followup",
+        "planned_word_count": 700
+      },
+      "evidence": [
+        {
+          "block_id": "b0001",
+          "quote": "Importing project data",
+          "source_id": "north_example"
+        },
+        {
+          "block_id": "b0002",
+          "quote": "A guide to project import with a worked malformed-date example.",
+          "source_id": "north_example"
+        },
+        {
+          "block_id": "b0002",
+          "quote": "[editorial guideline wording omitted; structured rule state retained]",
+          "source_id": "north_rules"
+        },
+        {
+          "block_id": "b0002",
+          "quote": "[editorial guideline wording omitted; structured rule state retained]",
+          "source_id": "north_rules"
+        },
+        {
+          "block_id": "b0002",
+          "quote": "[editorial guideline wording omitted; structured rule state retained]",
+          "source_id": "north_rules"
+        },
+        {
+          "block_id": "b0002",
+          "quote": "[editorial guideline wording omitted; structured rule state retained]",
+          "source_id": "north_rules"
+        },
+        {
+          "block_id": "b0003",
+          "quote": "[editorial guideline wording omitted; structured rule state retained]",
+          "source_id": "north_rules"
+        }
+      ],
+      "example_url": "https://north.example.com/example",
+      "exclusion_reasons": [],
+      "fit_excerpt": "A guide to project import with a worked malformed-date example.",
+      "format_state": "explicitly_accepted",
+      "matched_topic_phrase": "project import",
+      "originality_declaration": {
+        "is_unpublished": true,
+        "method": "new_followup",
+        "verification": "operator_declared_unverified"
+      },
+      "originality_state": "original_unpublished_required",
+      "pitch_draft": "I read \"Importing project data\" (https://north.example.com/example), which discusses project import. I propose \"Diagnose a failed project import\", a tutorial for small-team operators. The contribution is A synthetic malformed-date example and a corrected-row retry checklist. This would be a new follow-up, not a republication of \"Choosing an import method\". I can provide a worked example. The proposed length is 700 words. I have framed the proposed piece as a tutorial. The proposed piece is planned as a new, unpublished follow-up.",
+      "proposed_format": "tutorial",
+      "publisher": "North",
+      "publisher_host": "north.example.com",
+      "publisher_id": "north",
+      "qualification": "ready_for_human_pitch_review",
+      "research_task": null,
+      "route_state": "observed_route",
+      "submission_url": "https://north.example.com/contribute",
+      "topic_state": "body_evidence_found",
+      "unknowns": [],
+      "word_max": 800,
+      "word_min": 500,
+      "worked_example_state": "required"
+    },
+    {
+      "accepted_formats": [],
+      "declared_checks": {
+        "has_worked_example": true,
+        "is_unpublished": true,
+        "method": "new_followup",
+        "planned_word_count": 700
+      },
+      "evidence": [
+        {
+          "block_id": "b0001",
+          "quote": "Reliable data moves",
+          "source_id": "west_example"
+        },
+        {
+          "block_id": "b0002",
+          "quote": "This project import walkthrough uses a small invented data set.",
+          "source_id": "west_example"
+        },
+        {
+          "block_id": "b0001",
+          "quote": "[editorial guideline wording omitted; structured rule state retained]",
+          "source_id": "west_rules"
+        }
+      ],
+      "example_url": "https://west.example.com/example",
+      "exclusion_reasons": [
+        "submissions_closed"
+      ],
+      "fit_excerpt": "This project import walkthrough uses a small invented data set.",
+      "format_state": "not_stated",
+      "matched_topic_phrase": "project import",
+      "originality_declaration": {
+        "is_unpublished": true,
+        "method": "new_followup",
+        "verification": "operator_declared_unverified"
+      },
+      "originality_state": "not_stated",
+      "pitch_draft": null,
+      "proposed_format": "tutorial",
+      "publisher": "West",
+      "publisher_host": "west.example.com",
+      "publisher_id": "west",
+      "qualification": "explicit_mismatch",
+      "research_task": "Verify the publisher's current guidelines and an exact-host submission route before pitching.",
+      "route_state": "not_observed",
+      "submission_url": null,
+      "topic_state": "body_evidence_found",
+      "unknowns": [
+        "format_permission_not_stated",
+        "originality_rule_not_stated",
+        "worked_example_rule_not_stated",
+        "submission_route_not_observed"
+      ],
+      "word_max": null,
+      "word_min": null,
+      "worked_example_state": "not_stated"
+    },
+    {
+      "accepted_formats": [],
+      "declared_checks": {
+        "has_worked_example": true,
+        "is_unpublished": true,
+        "method": "new_followup",
+        "planned_word_count": 700
+      },
+      "evidence": [
+        {
+          "block_id": "b0001",
+          "quote": "Moving a team's projects",
+          "source_id": "east_example"
+        },
+        {
+          "block_id": "b0002",
+          "quote": "The project import example separates valid rows from malformed dates.",
+          "source_id": "east_example"
+        }
+      ],
+      "example_url": "https://east.example.com/example",
+      "exclusion_reasons": [],
+      "fit_excerpt": "The project import example separates valid rows from malformed dates.",
+      "format_state": "not_stated",
+      "matched_topic_phrase": "project import",
+      "originality_declaration": {
+        "is_unpublished": true,
+        "method": "new_followup",
+        "verification": "operator_declared_unverified"
+      },
+      "originality_state": "not_stated",
+      "pitch_draft": null,
+      "proposed_format": "tutorial",
+      "publisher": "East",
+      "publisher_host": "east.example.com",
+      "publisher_id": "east",
+      "qualification": "needs_guideline_or_route_check",
+      "research_task": "Verify the publisher's current guidelines and an exact-host submission route before pitching.",
+      "route_state": "not_observed",
+      "submission_url": null,
+      "topic_state": "body_evidence_found",
+      "unknowns": [
+        "format_permission_not_stated",
+        "originality_rule_not_stated",
+        "worked_example_rule_not_stated",
+        "guidelines_not_supplied",
+        "submission_route_not_observed"
+      ],
+      "word_max": null,
+      "word_min": null,
+      "worked_example_state": "not_stated"
+    }
+  ],
+  "schema_version": "1.0",
+  "scope": {
+    "as_of": "2026-10-04T10:00:00Z",
+    "asset_title": "Choosing an import method",
+    "audience": "small-team operators",
+    "proposed_title": "Diagnose a failed project import",
+    "source_ids": [
+      "own",
+      "north_example",
+      "north_rules",
+      "west_example",
+      "west_rules",
+      "east_example"
+    ],
+    "source_roles": [
+      "own_article",
+      "publisher_example",
+      "submission_guidelines",
+      "publisher_example",
+      "submission_guidelines",
+      "publisher_example"
+    ],
+    "topic_phrases": [
+      "project import"
+    ]
+  },
+  "source_index": [
+    {
+      "content_sha256": "19cd2608bc88535357f9ee7c5ff6cb3b3414efe55ba4987582200494c4148171",
+      "id": "own",
+      "kind": "page",
+      "observed_at": "2026-10-04T10:00:00Z",
+      "provenance": "synthetic_fixture",
+      "provider_date": null,
+      "published_at": null,
+      "record_id": null,
+      "record_id_origin": "none",
+      "role": "own_article",
+      "status": "collected",
+      "url": "https://asset.example.com/choosing-import-method"
+    },
+    {
+      "content_sha256": "07c1061f6fae547671067780e4ab1f989475c6ba1b3774e53242b261624097c2",
+      "id": "north_example",
+      "kind": "page",
+      "observed_at": "2026-10-04T10:00:00Z",
+      "provenance": "synthetic_fixture",
+      "provider_date": null,
+      "published_at": null,
+      "record_id": null,
+      "record_id_origin": "none",
+      "role": "publisher_example",
+      "status": "collected",
+      "url": "https://north.example.com/example"
+    },
+    {
+      "content_sha256": "70a0d5c9b906a2a8231e7c001cc54c66c09460bf4e53c1da306c09dd1171e77e",
+      "id": "north_rules",
+      "kind": "page",
+      "observed_at": "2026-10-04T10:00:00Z",
+      "provenance": "synthetic_fixture",
+      "provider_date": null,
+      "published_at": null,
+      "record_id": null,
+      "record_id_origin": "none",
+      "role": "submission_guidelines",
+      "status": "collected",
+      "url": "https://north.example.com/guidelines"
+    },
+    {
+      "content_sha256": "85e839de95c0ec4f2e748f279dfa28af584ce8176fa62c00f450c4f12039f3a5",
+      "id": "west_example",
+      "kind": "page",
+      "observed_at": "2026-10-04T10:00:00Z",
+      "provenance": "synthetic_fixture",
+      "provider_date": null,
+      "published_at": null,
+      "record_id": null,
+      "record_id_origin": "none",
+      "role": "publisher_example",
+      "status": "collected",
+      "url": "https://west.example.com/example"
+    },
+    {
+      "content_sha256": "da1383be844c7e7806eb250eea6d223278162f62eb1a19a0d1f6ef858c3a0a4e",
+      "id": "west_rules",
+      "kind": "page",
+      "observed_at": "2026-10-04T10:00:00Z",
+      "provenance": "synthetic_fixture",
+      "provider_date": null,
+      "published_at": null,
+      "record_id": null,
+      "record_id_origin": "none",
+      "role": "submission_guidelines",
+      "status": "collected",
+      "url": "https://west.example.com/guidelines"
+    },
+    {
+      "content_sha256": "bcd941a8f8daa5f7e3c94790935342416c574c23cb6b9543d7caed7936ec591b",
+      "id": "east_example",
+      "kind": "page",
+      "observed_at": "2026-10-04T10:00:00Z",
+      "provenance": "synthetic_fixture",
+      "provider_date": null,
+      "published_at": null,
+      "record_id": null,
+      "record_id_origin": "none",
+      "role": "publisher_example",
+      "status": "collected",
+      "url": "https://east.example.com/example"
+    }
+  ],
+  "status": "needs_review",
+  "summary": {
+    "analyzed_publishers": 3,
+    "excluded_publishers": 1,
+    "output_cards": 2
+  },
+  "transport_contract_version": "1.0",
+  "warnings": [
+    {
+      "code": "synthetic_data",
+      "note": "Invented fixture data is for demonstration only.",
+      "source_ids": [
+        "own",
+        "north_example",
+        "north_rules",
+        "west_example",
+        "west_rules",
+        "east_example"
+      ]
+    }
+  ]
+}
