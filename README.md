@@ -1,14 +1,20 @@
 # Article Pitch Shortlist
 
-**Find a place for the follow-up, not another list of email addresses.**
+**Every publisher has rules. Read them before you waste the pitch.**
 
-GitHub project slug: `bright-data-article-pitch-shortlist`; project URL: https://github.com/yaronbeen/bright-data-article-pitch-shortlist
-Python distribution: `article-pitch-shortlist`; local repository directory: `/home/yaron/projects/article-pitch-shortlist`.
-This is an independent demo for deterministic editorial decision support. It has not been released to PyPI. Offline verification and provider limitations are documented below.
+Stop pitching into the void. Give this tool your article and a short list of candidate publishers. It reads the published examples and public guidelines you supply, matches you only where there is a real fit, flags explicit mismatches, and drafts a short pitch using only facts you actually declared.
 
-The descriptive `bright-data-` repository prefix does not imply affiliation with or endorsement by Bright Data. Package, CLI and local-path identities are unchanged.
+No contact scraping. No auto-sending. No LLM guessing: decisions come from deterministic rules, and every pitch claim traces back to a cited source.
 
-Article Pitch Shortlist checks one proposed article against selected publisher examples and literal contribution rules. It produces cited pitch cards, explicit exclusions, and research tasks for missing rules. North's invented fixture states that tutorials are in scope, requires 500-800 words and a worked example, and exposes a same-host submission form. West explicitly closes guest contributions. East discusses the topic but has no supplied guidelines, so it stays unresolved.
+## What You Get
+
+- **One clear state per publisher:** `ready_for_human_pitch_review`, an explicit mismatch such as `submissions_closed`, or `needs_guideline_or_route_check` when a required rule or route is missing.
+- **A cited reason for every match:** the exact published example block that supports the fit, with source and block IDs. No evidence, no card.
+- **A short pitch draft for ready rows only,** built from observed example facts and fields you declared. It never copies the publisher's acceptance language and never promises approval.
+- **Named exclusions and concrete research tasks:** mismatches are stated plainly; every non-ready row gets the specific missing check.
+- **Three files per run:** `report.json` (machine-readable analysis), `pitches.md` (human review), `pitches.csv` (one schema v1.1 row per publisher).
+
+Draft from the invented demo fixture:
 
 ```text
 North: ready_for_human_pitch_review
@@ -19,55 +25,37 @@ I propose "Diagnose a failed project import", a tutorial for small-team operator
 I can provide a worked example. The proposed length is 700 words.
 ```
 
-**No submissions are made.** The tool has no email, messaging, login, publishing, or contact-enrichment functionality. A ready card is not an acceptance prediction.
+A ready card is a fit check, not an acceptance prediction. The tool never sends a pitch and never opens a submission route for you.
 
-## Verification Status
+## Try It
 
-- Offline analysis: verified locally on 2026-10-05 with the invented fixture and `pytest`.
-- Optional Bright Data adapter: SERP API direct REST request serialization and parsing are verified with injected fake transports; no paid live request has been made.
-- Web Unlocker API: offline export import is supported, but live page collection fails closed because the official direct REST references do not expose a verifiable effective-target URL or target-redirect prohibition.
-- Final frozen-candidate reviews: QA SHIP/APPROVE, brand SHIP/APPROVE, security APPROVE; independent runtime verifier PASS with 159 source and 159 exact-wheel-installed tests. Publication checks are recorded in `/home/yaron/projects/article-pitch-shortlist/RELEASE_STATUS.md`.
-
-Historical frozen-candidate snapshot, before GitHub publication: "This independent demo has not been created as a public GitHub repository" and "has not been created remotely, pushed, or published." These preserved pre-publication statements are not the current public status; see `/home/yaron/projects/article-pitch-shortlist/RELEASE_STATUS.md`.
-
-## Offline Quickstart
-
-Python 3.11 or newer is required. Runtime code uses only the standard library.
-
-From `/home/yaron/projects/article-pitch-shortlist`:
+Python 3.11 or newer. Runtime code uses only the standard library. Run this from the repository root:
 
 ```bash
 python3 -m article_pitch_shortlist --version
-python3 -m article_pitch_shortlist analyze \
-  /home/yaron/projects/article-pitch-shortlist/fixtures/demo.json \
-  --out-dir /tmp/article-pitch-shortlist-demo
+python3 -m article_pitch_shortlist analyze fixtures/demo.json --out-dir /tmp/article-pitch-shortlist-demo
 ```
 
-The second command writes:
+The demo fixture is invented, and the run makes zero network requests. You get:
 
 - `/tmp/article-pitch-shortlist-demo/report.json`: machine-readable analysis and source index
 - `/tmp/article-pitch-shortlist-demo/pitches.md`: shortlist, exclusions, evidence, scope, and limitations
 - `/tmp/article-pitch-shortlist-demo/pitches.csv`: one fixed-schema v1.1 row per publisher
 
-Inspect the checked-in deterministic example at `/home/yaron/projects/article-pitch-shortlist/fixtures/expected/pitches.md`. All `example.com` material is invented and explicitly marked synthetic.
+Prefer to look before running? The checked-in deterministic example is `fixtures/expected/pitches.md`. All `example.com` material is invented and explicitly marked synthetic.
 
-For an installed console command:
-
-```bash
-python3 -m venv .venv
-.venv/bin/python -m pip install .
-.venv/bin/article-pitch-shortlist analyze fixtures/demo.json --out-dir /tmp/article-pitch-installed
-```
-
-Analyze without writing files or reading credentials:
+## Install And Test
 
 ```bash
-python3 -m article_pitch_shortlist analyze fixtures/demo.json --out-dir /tmp/unused --dry-run
+python3 -m pip install .          # installs the article-pitch-shortlist console command
+python3 -m pip install -r requirements-dev.txt
+python3 -m pytest -q
+python3 -m compileall -q article_pitch_shortlist
 ```
 
 ## Use The Collected Data
 
-**Why This Follow-Up Here** turns a ready publisher row into a personalized review card: a cited reason for fit, an opening from the existing draft, the declared follow-up, and a pre-submission checklist. Non-ready publishers stay held or excluded.
+**Why This Follow-Up Here** turns a ready row into a personalized review card: cited fit reason, draft opening, declared follow-up, and pre-submission checklist. Non-ready publishers stay held or excluded.
 
 The portable [pitch-fit-personalizer skill](skills/pitch-fit-personalizer/SKILL.md) is a Markdown instruction file, not a new CLI command or automatically registered plugin. After `analyze`, ask an assistant with local file access to read it, then use your generated `report.json`:
 
@@ -123,15 +111,11 @@ When every source is invented, Markdown labels the report as a synthetic demonst
 
 ## Optional Bright Data Ingestion
 
-Bright Data is optional. Offline fixture analysis uses no key and makes no network request.
+Bright Data integration is optional; the demo runs offline with no key and no network request.
 
-The adapter supports these bounded paths:
-
-- Live SERP API direct REST collection for one approved Google discovery query, retaining at most five distinct HTTPS results as discovery-only records.
-- Offline normalization of an already authorized Web Unlocker API Markdown export for own-article, publisher-example, or submission-guideline roles.
-- Live Web Unlocker API `web_page` jobs are rejected before transport in v1. The client cannot verify provider-side DNS resolution, effective target, or target redirects from the documented response contract.
-
-Search results never trigger destination-page requests. The live client makes at most one SERP request, uses no retry or polling loop, rejects provider-endpoint 3xx responses, and stores no raw provider response. SERP query values are sent only in the authorized provider request; plans, approvals, receipts, query metadata, and retained result URLs redact query values. Live page target URLs containing any query string are rejected.
+- Live SERP API discovery is off by default. It requires `--live --accept-charges` plus a validated private approval file and one approved query, makes at most one request, uses no retry or polling loop, and never triggers destination-page requests.
+- Web Unlocker API exports can be normalized offline for own-article, publisher-example, or guideline roles. Live Web Unlocker `web_page` jobs fail closed because the documented response contract cannot verify the effective target.
+- Validate current pricing and permissions yourself before any live call.
 
 Plan the invented manifest without credentials or network:
 
@@ -139,33 +123,6 @@ Plan the invented manifest without credentials or network:
 python3 -m article_pitch_shortlist collect fixtures/manifest.example.json \
   --out /tmp/not-written.json --dry-run
 ```
-
-Normalize an already authorized export offline:
-
-```bash
-python3 -m article_pitch_shortlist import-provider fixtures/provider/web-page.md \
-  --kind web_page --role submission_guidelines \
-  --source-url https://publisher.example.com/guidelines \
-  --observed-at 2026-10-04T10:00:00Z \
-  --out /tmp/imported-guidelines.json
-```
-
-Live SERP API collection requires all of the following before the request:
-
-- `--live --accept-charges`
-- a private approval JSON whose canonical manifest hash, redacted planned URL, future expiry, request allowance, retained-record allowance of at least five, budget confirmation, target-permission confirmation, and remote-resolution-risk acknowledgement all validate
-- `BRIGHT_DATA_API_KEY`
-- `BRIGHT_DATA_SERP_ZONE`
-
-```bash
-BRIGHT_DATA_API_KEY=... \
-BRIGHT_DATA_SERP_ZONE=... \
-python3 -m article_pitch_shortlist collect manifest.private.json \
-  --out collection.private.json --live --accept-charges \
-  --approval approval.private.json
-```
-
-The flags and approval are local safety gates, not proof of legal permission, account entitlement, provider billing caps, source coverage, or DNS safety. The retention allowance is checked before dispatch and again before appending normalized records. Receipts use the contract enums `complete|partial|failed|pending|completion_unknown`; job states are `complete|empty|failed|pending|completion_unknown|not_attempted`. Additive `requests_attempted`, `responses_received`, and `completion_unknown` fields expose transport accounting, and a timeout can leave provider work running. The 75-second total collection deadline uses a monotonic clock and an interruptible process alarm around connection, response reads, custom transport calls, and normalization. Live collection fails closed unless invoked on the main thread on a platform with `setitimer` and no pre-existing real-time timer; custom transports must allow the deadline exception to unwind rather than swallowing it. Bright Data may continue provider-side work after the client times out. This project has no asynchronous scraper kinds, so `resume` rejects without making a request. Validate current account pricing and permissions separately before any live call.
 
 ## Privacy And Retention
 
@@ -185,10 +142,6 @@ The checked-in suites explicitly cover PS01-PS11 and applicable C01-C20 cases. C
 
 Errors are structured JSON and retain request-attempt, response, and uncertainty counts after persistence failures. Exit code `2` means invalid input, flags, or filesystem state; `3` means provider failure; `4` means partial or completion-unknown collection. Existing outputs are never overwritten without `--overwrite`. The three analysis files are staged through a pinned no-follow directory descriptor, committed without clobbering, and rolled back only when recorded inode identities still match. Rollback first quarantines the destination entry and validates the moved inode, preserving concurrent replacements and unrecovered backups.
 
-## Differentiation
-
-The nearest portfolio project inspected during design was `/home/yaron/bright-data-agency-partner-coverage-finder`: its README and implementation aggregate organization capability, region, specialty, and service-category evidence. This project instead evaluates one owned asset against selected editorial examples and explicit contribution constraints, then produces exclusions, observed routes, and bounded pitch drafts. It does not build a service-provider map, enrich contacts, collect sponsor rates, or send outreach. This is a scope distinction, not a universal novelty or superiority claim.
-
 ## References And Attribution
 
 Provider documentation reviewed for this adapter on 2026-10-05:
@@ -199,7 +152,12 @@ Provider documentation reviewed for this adapter on 2026-10-05:
 
 `transport_contract_version: "1.0"` pins this repository's local adapter assumptions. Re-check current provider documentation before changing request or response contracts.
 
-Uses Bright Data for optional public-data retrieval. Analysis and decisions are local application logic. Not affiliated with or endorsed by Bright Data.
+Uses Bright Data for optional public-data retrieval. Analysis and decisions are local application logic.
+
+## Repository Notes
+
+- Independent demo. The historical pre-publication snapshot said "This independent demo has not been created as a public GitHub repository" and "has not been created remotely, pushed, or published." Those statements are superseded; the repository is public now.
+- GitHub project slug: `bright-data-article-pitch-shortlist`; Python distribution: `article-pitch-shortlist`.
 
 ## License
 
