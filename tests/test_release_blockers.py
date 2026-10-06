@@ -65,7 +65,7 @@ def approval_for(manifest, *, retained=5):
         "schema_version": "1.0",
         "project": "article-pitch-shortlist",
         "manifest_sha256": brightdata.manifest_sha256(manifest),
-        "expires_at": "2027-01-01T00:00:00Z",
+        "expires_at": "2035-01-01T00:00:00Z",
         "max_requests": planned["planned_requests"],
         "max_retained_records": retained,
         "approved_urls": [item["approved_url"] for item in planned["requests"]],
