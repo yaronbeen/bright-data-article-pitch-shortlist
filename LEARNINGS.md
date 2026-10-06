@@ -1,5 +1,19 @@
 # Learnings
 
+## Current Skills-Only Workflow - 2026-10-06
+
+- The user explicitly retired the Python product in favor of one simple Bright Data-backed business skill. Historical application decisions below are not current operating instructions.
+- Source evidence must be retrieved through configured Bright Data tools in the current agent session. Missing access means connect and stop, not use an export, mock, or another provider.
+- The owned article/outline body must actually be collected before fit analysis. An unobserved URL or user facts alone are insufficient.
+- Genuine guideline quotations are allowed as policy evidence; they never guarantee acceptance. An explicitly observed form or submission address can be a route without contact enrichment or clicking it.
+- Official MCP setup and tools documentation was fetched on 2026-10-06. `chub` was unavailable, so current official pages were read directly. Static documentation checks do not establish live functionality.
+
+- Independent real-data exercise: PASS for a held/excluded outcome only, not the drafting branch. Closing new contributor applications excludes that route; it does not prove all existing-contributor submissions are closed. Unknown status and missing applicable routes keep the pitch held.
+- Error bodies, navigation, newsletter forms, advertising links, and unrelated activity invitations do not establish article guidelines, example-body fit, or an open submission route. A footer date is not a policy date, and a collected older article does not establish user authorship/rights.
+- External evidence remains at `/home/yaron/.claude/data/brightdata-drafts/2026-10-06-brightdata-real-business-validation.md`. The public validation business is not the user's business. No source excerpts or dataset were copied into the repository, and no calls were repeated for the rule clarification.
+
+## Historical Application Learnings
+
 - Publisher identity is intentionally exact after hostname case/trailing-dot/port-443 normalization. `www.north.example.com` is not `north.example.com`.
 - A topic hit in a heading or SERP snippet cannot establish selected-example body fit.
 - Observed routes need both an allowed Markdown label and the exact publisher host; external forms remain unknown.

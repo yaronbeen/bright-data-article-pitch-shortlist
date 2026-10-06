@@ -1,5 +1,0 @@
-skills/pitch-fit-personalizer/SKILL.md
-docs/skills/pitch-fit-personalizer-example.md
-docs/skills/validation.md
-docs/skills/review-manifest.txt
-README.md

@@ -1,24 +1,28 @@
 # Technical Debt
 
-## P0 - Before Publication
+## P0 - Publication
 
-- None. The sole synthetic test-expression rewrite preserves the exact rejected URL; the unchanged normal pre-commit hook now passes with no secrets detected.
-- Final frozen-candidate QA SHIP/APPROVE, brand SHIP/APPROVE, security APPROVE, and independent runtime PASS are recorded; no review is pending.
+- None. On 2026-10-07, the user reported all three reviewers APPROVE and explicitly authorized this repository's skills-only publication. Verify the push, public file bytes, and current tree; approval is not a claim that the drafting branch was live-tested.
 
-## P1 - Before Live Pilot
+## P1 - Real-Data Validation
 
-- None. Live Web Unlocker API page collection is disabled; SERP API remains explicitly gated and fake-transport verified.
+- The external exercise validated the held/excluded branch, not a supported-fit pitch draft. An open applicable route and relevant publisher body remain unvalidated. No extra collection is required for the conservative outcome; do not invent a pitch or duplicate calls to force a draft.
 
 ## P2 - When Convenient
 
-- Add JSON Schema documents generated from the stable v1 input and library contracts.
-- If separately authorized, run a budget-capped SERP API direct REST smoke test and record the receipt without publishing private query data.
+- None for the small skills-only scope.
 
 ## P3 - Nice To Have
 
-- Add more invented examples for each supported literal guideline sentence.
+- None. Do not reintroduce an application, mock datasets, or a report schema.
 
 ## Resolved Items
+
+- 2026-10-07: User-reported three-reviewer approval and explicit publication authorization resolve the skills-only review gate for this repository only. Preserve the existing public identity, normal hooks, history, license, and private ignored files. The unvalidated drafting branch remains P1.
+
+- 2026-10-06: Received the independent bounded real-data pitch result (PASS for held/excluded only), clarified scoped-closure/error-body/route/date rules without new collection, and kept all source evidence external at `/home/yaron/.claude/data/brightdata-drafts/2026-10-06-brightdata-real-business-validation.md`. Top-level release review remains separate.
+
+- 2026-10-06: Retired application-specific debt with the explicitly authorized retirement of the Python product, synthetic fixtures, release records, and Python CI. Historical resolutions below remain as history, not current run instructions. Git history and private ignored local files are preserved.
 
 - 2026-10-05: Added deterministic fixture outputs, strict exact-host rules, atomic output writes, and no-network dry runs.
 - 2026-10-05: Added adapter regressions for retention, accounting, 429, redirects, timeouts, deadlines, query redaction, and fail-closed page collection.
