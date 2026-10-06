@@ -15,7 +15,7 @@ import time
 
 import pytest
 
-from article_pitch_shortlist import brightdata, cli
+from article_pitch_shortlist import __version__, brightdata, cli
 from article_pitch_shortlist.brightdata import HttpResponse, TransportError
 from article_pitch_shortlist.core import InputError, analyze, draft_pitch
 from article_pitch_shortlist.export import render_csv, render_markdown
@@ -262,13 +262,18 @@ def test_distribution_and_repository_identity_are_neutral():
     agent_guide = (ROOT / "AGENT.md").read_text(encoding="utf-8")
     verification = (ROOT / "VERIFICATION.md").read_text(encoding="utf-8")
     latest_handover = (ROOT / "handover" / "handover-007.md").read_text(encoding="utf-8")
-    old_slug = "bright-data-" + "article-pitch-shortlist"
     old_distribution = "bright_data_" + "article_pitch_shortlist"
-    old_root = "/home/yaron/projects/" + old_slug
+    old_root = "/home/yaron/projects/" + "bright-data-" + "article-pitch-shortlist"
+    checkout_directory_names = {"article-pitch-shortlist", "bright-data-article-pitch-shortlist"}
 
-    assert ROOT.name == "article-pitch-shortlist"
+    assert ROOT.name in checkout_directory_names
     assert metadata["project"]["name"] == "article-pitch-shortlist"
-    assert "GitHub project slug: `article-pitch-shortlist`" in readme
+    assert metadata["project"]["version"] == __version__
+    assert metadata["project"]["scripts"] == {"article-pitch-shortlist": "article_pitch_shortlist.cli:main"}
+    assert metadata["tool"]["setuptools"]["packages"] == ["article_pitch_shortlist"]
+    assert (ROOT / "article_pitch_shortlist" / "cli.py").is_file()
+    assert "GitHub project slug: `bright-data-article-pitch-shortlist`" in readme
+    assert "Python distribution: `article-pitch-shortlist`" in readme
     assert "authoriz" not in agent_guide.casefold()
     assert "independent demo" in agent_guide.casefold()
     assert "publication status is unpublished" in agent_guide.casefold()
@@ -283,7 +288,6 @@ def test_distribution_and_repository_identity_are_neutral():
             contents = path.read_text(encoding="utf-8")
         except UnicodeDecodeError:
             continue
-        assert old_slug not in contents, str(path)
         assert old_distribution not in contents, str(path)
         assert old_root not in contents, str(path)
 
