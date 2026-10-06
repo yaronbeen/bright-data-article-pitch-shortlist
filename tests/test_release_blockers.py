@@ -105,7 +105,7 @@ def test_pitch_uses_structured_capability_not_raw_guideline_quotes(demo_payload)
 
 
 def test_readme_pitch_example_and_rendered_pitch_omit_guideline_derived_range(demo_payload):
-    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    readme = (ROOT / "docs" / "technical-guide.md").read_text(encoding="utf-8")
     readme_example = readme.split("```text", 1)[1].split("```", 1)[0]
     report = analyze(demo_payload)
     rendered = render_markdown(report)
@@ -254,7 +254,7 @@ def test_assembled_pitch_prose_is_checked_after_template_composition():
         )
 
 
-def test_distribution_and_repository_identity_are_neutral():
+def test_distribution_and_repository_identity_are_neutral(capsys):
     import tomllib
 
     metadata = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))
@@ -272,8 +272,10 @@ def test_distribution_and_repository_identity_are_neutral():
     assert metadata["project"]["scripts"] == {"article-pitch-shortlist": "article_pitch_shortlist.cli:main"}
     assert metadata["tool"]["setuptools"]["packages"] == ["article_pitch_shortlist"]
     assert (ROOT / "article_pitch_shortlist" / "cli.py").is_file()
-    assert "GitHub project slug: `bright-data-article-pitch-shortlist`" in readme
-    assert "Python distribution: `article-pitch-shortlist`" in readme
+    with pytest.raises(SystemExit) as exc:
+        cli.main(["--help"])
+    assert exc.value.code == 0
+    assert "article-pitch-shortlist" in capsys.readouterr().out
     assert "authoriz" not in agent_guide.casefold()
     assert "independent demo" in agent_guide.casefold()
     assert "publication status is unpublished" in agent_guide.casefold()
@@ -301,9 +303,10 @@ def test_public_readme_states_neutral_independent_demo_status_without_user_autho
         "explicitly authorized",
     ):
         assert phrase not in readme
-    assert "independent demo" in readme
-    assert "has not been created as a public github repository" in readme
-    assert "has not been created remotely, pushed, or published" in readme
+    guide = (ROOT / "docs" / "technical-guide.md").read_text(encoding="utf-8").casefold()
+    assert "its fixture is invented and the run makes zero network requests" in guide
+    assert "live web unlocker page collection fails closed" in guide
+    assert "https://docs.brightdata.com/api-reference/rest-api/serp/serp-api.md" in guide
 
 
 def test_only_ready_rows_receive_drafts_and_other_rows_keep_research_tasks(demo_payload):
@@ -392,7 +395,7 @@ def test_markdown_untrusted_values_are_inert_single_line():
 
 def test_private_json_patterns_are_ignored_and_readme_uses_direct_rest_references():
     gitignore = (ROOT / ".gitignore").read_text(encoding="utf-8")
-    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    readme = (ROOT / "docs" / "technical-guide.md").read_text(encoding="utf-8")
 
     assert "*.private.json" in gitignore
     assert ".*.tmp" in gitignore
