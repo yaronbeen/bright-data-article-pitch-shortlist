@@ -1,8 +1,8 @@
 # Article Pitch Shortlist
 
-**Every publisher has rules. Read them before you waste the pitch.**
+**Collect publisher evidence with Bright Data. Turn it into a pitch shortlist you can actually review.**
 
-Stop pitching into the void. Give this tool your article and a short list of candidate publishers. It reads the published examples and public guidelines you supply, matches you only where there is a real fit, flags explicit mismatches, and drafts a short pitch using only facts you actually declared.
+Use Bright Data SERP and Web Unlocker collection to gather search results, publisher examples, and guideline pages. Article Pitch then filters that evidence against your article, flags explicit mismatches, and prepares short, cited drafts for human review using only facts you actually declared.
 
 No contact scraping. No auto-sending. No LLM guessing: decisions come from deterministic rules, and every pitch claim traces back to a cited source.
 
@@ -27,7 +27,7 @@ I can provide a worked example. The proposed length is 700 words.
 
 A ready card is a fit check, not an acceptance prediction. The tool never sends a pitch and never opens a submission route for you.
 
-## Try It
+## Quick Offline Demo
 
 Python 3.11 or newer. Runtime code uses only the standard library. Run this from the repository root:
 
@@ -36,7 +36,7 @@ python3 -m article_pitch_shortlist --version
 python3 -m article_pitch_shortlist analyze fixtures/demo.json --out-dir /tmp/article-pitch-shortlist-demo
 ```
 
-The demo fixture is invented, and the run makes zero network requests. You get:
+This is a quick try of the analysis and report format, not the main workflow. Its fixture is invented and the run makes zero network requests. You get:
 
 - `/tmp/article-pitch-shortlist-demo/report.json`: machine-readable analysis and source index
 - `/tmp/article-pitch-shortlist-demo/pitches.md`: shortlist, exclusions, evidence, scope, and limitations
@@ -109,12 +109,13 @@ Generated evidence appendices do not reproduce publisher acceptance, approval, g
 
 When every source is invented, Markdown labels the report as a synthetic demonstration. When provenance is mixed, it says so without claiming that non-synthetic material is invented. Each CSV row carries semicolon-separated `evidence_provenance` values aligned to its evidence source IDs, plus report-level provenance fields applying across the whole file. Pitch drafts state the proposed length in the contract wording and acknowledge only literal guidelines that were actually found and cited; acceptance language is never copied into a pitch.
 
-## Optional Bright Data Ingestion
+## Bright Data Collection And Data Ingress
 
-Bright Data integration is optional; the demo runs offline with no key and no network request.
+Bright Data is the collection layer; Article Pitch is the evidence-filtering and pitch-preparation follow-up. Collection is deliberately separate from analysis so you can review what enters the source library.
 
-- Live SERP API discovery is off by default. It requires `--live --accept-charges` plus a validated private approval file and one approved query, makes at most one request, uses no retry or polling loop, and never triggers destination-page requests.
-- Web Unlocker API exports can be normalized offline for own-article, publisher-example, or guideline roles. Live Web Unlocker `web_page` jobs fail closed because the documented response contract cannot verify the effective target.
+- **Search results:** an approved live SERP API discovery job can collect one Google search result set (up to five retained organic records). It is off by default, requires `--live --accept-charges` and a validated private approval file, makes at most one request, uses no retry or polling loop, and never triggers destination-page requests.
+- **Publisher pages:** provide an already-authorized Bright Data Web Unlocker Markdown export to `import-provider` with `--kind web_page`; assign it the `own_article`, `publisher_example`, or `submission_guidelines` role. The live Web Unlocker `web_page` route in `collect` is fail-closed because the documented response contract cannot verify the effective target. This import path is the supported way to provide page-collection artifacts today.
+- **Use collected artifacts:** collection and import produce a normalized source library JSON. Pass that library to analysis with `analyze <input.json> --sources <library.json> --out-dir <directory>`. Review source URLs, excerpts, provenance, and permissions before relying on them.
 - Validate current pricing and permissions yourself before any live call.
 
 Plan the invented manifest without credentials or network:
@@ -152,7 +153,7 @@ Provider documentation reviewed for this adapter on 2026-10-05:
 
 `transport_contract_version: "1.0"` pins this repository's local adapter assumptions. Re-check current provider documentation before changing request or response contracts.
 
-[Bright Data](https://brightdata.com) is used for optional public-data retrieval. Analysis and decisions are local application logic.
+[Bright Data](https://brightdata.com) provides public-data collection. Article Pitch's evidence filtering, fit decisions, and draft preparation are local application logic; humans review drafts and submit any pitch themselves.
 
 ## License
 
