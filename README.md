@@ -152,12 +152,7 @@ Provider documentation reviewed for this adapter on 2026-10-05:
 
 `transport_contract_version: "1.0"` pins this repository's local adapter assumptions. Re-check current provider documentation before changing request or response contracts.
 
-Uses Bright Data for optional public-data retrieval. Analysis and decisions are local application logic.
-
-## Repository Notes
-
-- Independent demo. The historical pre-publication snapshot said "This independent demo has not been created as a public GitHub repository" and "has not been created remotely, pushed, or published." Those statements are superseded; the repository is public now.
-- GitHub project slug: `bright-data-article-pitch-shortlist`; Python distribution: `article-pitch-shortlist`.
+[Bright Data](https://brightdata.com) is used for optional public-data retrieval. Analysis and decisions are local application logic.
 
 ## License
 
